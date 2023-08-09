@@ -25,7 +25,7 @@ func main() {
 
 	//自定义 http配置
 	s := http.Server{
-		Addr:              ":443",
+		Addr:              ":25564",
 		Handler:           r,
 		ReadHeaderTimeout: 10 * time.Second,
 		WriteTimeout:      10 * time.Second,
