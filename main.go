@@ -18,6 +18,8 @@ func main() {
 	r := gin.Default()
 	//设置html模板地址
 	r.LoadHTMLGlob("html/*")
+	//配置图标 https://blog.csdn.net/lt326030434/article/details/113058241
+	r.StaticFile("/favicon.ico", "./icon.png")
 	//设置静态资源路径 https://www.cnblogs.com/aaronthon/p/12802591.html
 	r.Static("/res", "./res")
 
@@ -32,10 +34,7 @@ func main() {
 	//index 首页
 	r.GET("/", ctr.Index)
 
-	//启动 web http服务 【没证书使用这个启动】
-	//err := s.ListenAndServe()
-
-	//启动 web https服务 并加载ssl证书 【有证书使用这个启动】
+	//启动 web https服务 并加载ssl证书
 	err := s.ListenAndServeTLS("ssl/redcraft.cn.pem", "ssl/redcraft.cn.key")
 	if err != nil {
 		// Gin 启动失败 终止程序
