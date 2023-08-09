@@ -20,8 +20,6 @@ func main() {
 	r.LoadHTMLGlob("html/*")
 	//设置静态资源路径 https://www.cnblogs.com/aaronthon/p/12802591.html
 	r.Static("/res", "./res")
-	//配置ssl证书
-	r.RunTLS(":443", "", "")
 
 	//自定义 http配置
 	s := http.Server{
@@ -34,11 +32,11 @@ func main() {
 	//index 首页
 	r.GET("/", ctr.Index)
 
-	//启动 webserver http服务
+	//启动 web http服务 【没证书使用这个启动】
 	//err := s.ListenAndServe()
 
-	//启动 https服务 并加载ssl证书 https://www.jianshu.com/p/01057d2c37e4
-	err := s.ListenAndServeTLS("", "")
+	//启动 web https服务 并加载ssl证书 【有证书使用这个启动】
+	err := s.ListenAndServeTLS("ssl/redcraft.cn.pem", "ssl/redcraft.cn.key")
 	if err != nil {
 		// Gin 启动失败 终止程序
 		panic(err)
