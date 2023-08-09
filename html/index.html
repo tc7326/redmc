@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>红土大陆服务器</title>
+    <style>
+        /* 设置背景图 */
+        body {
+            background-image: url("/res/bg_index.jpg");
+            background-size: cover;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* 设置登录模块位置 */
+        .login-module {
+            position: absolute;
+            top: 50%;
+            left: 70%;
+            transform: translate(-50%, -50%);
+            width: 300px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px 2px #ccc;
+            padding: 20px;
+        }
+
+        /* 设置登录按钮样式 */
+        .login-btn {
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<!-- 登录模块 -->
+<div class="login-module">
+    <h2>登录</h2>
+    <form>
+        <input type="text" placeholder="账号">
+        <input type="password" placeholder="密码">
+        <button class="login-btn">登录</button>
+    </form>
+</div>
+</body>
+</html>

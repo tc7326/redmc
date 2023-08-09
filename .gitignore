@@ -19,3 +19,6 @@
 
 # Go workspace file
 go.work
+
+# 忽略证书路径
+/ssl
