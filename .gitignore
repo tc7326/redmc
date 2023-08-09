@@ -20,5 +20,9 @@
 # Go workspace file
 go.work
 
+# 忽略 idea
+*.iml
+vcs.xml
+
 # 忽略证书路径
 /ssl
